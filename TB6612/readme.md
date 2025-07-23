@@ -55,6 +55,7 @@
 ### 示例代码
 
 ```cpp
+#include "ti_msp_dl_config.h"
 #include "motor.h"
 
 Motor motor(MOTOR_GPIO_PORT, MOTOR_GPIO_IN1_PIN, MOTOR_GPIO_IN2_PIN, MOTOR_PWM_INST, DL_TIMER_CC_0_INDEX); // 请根据自己设置的GPIO来初始化
