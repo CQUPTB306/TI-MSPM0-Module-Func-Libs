@@ -1,3 +1,11 @@
+/******************************************************************************
+ - mpu6050.h
+ - Designed by WilliTourt
+ - 2025.07.23
+ - More info at:
+ - https://github.com/CQUPTB306/TI-MSPM0-Module-Func-Libs/tree/main/MPU6050
+******************************************************************************/
+
 #ifndef __MPU6050_H__
 #define __MPU6050_H__
 
