@@ -1,3 +1,11 @@
+/******************************************************************************
+ - motor.h
+ - Designed by WilliTourt
+ - 2025.07.23
+ - More info at:
+ - https://github.com/CQUPTB306/TI-MSPM0-Module-Func-Libs/blob/main/TB6612
+******************************************************************************/
+
 #ifndef __MOTOR_H__
 #define __MOTOR_H__
 
