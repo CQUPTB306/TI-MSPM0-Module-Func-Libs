@@ -1,3 +1,11 @@
+/******************************************************************************
+ - oled.cpp
+ - Designed by WilliTourt
+ - 2025.07.23
+ - More info at:
+ - https://github.com/CQUPTB306/TI-MSPM0-Module-Func-Libs/blob/main/OLED
+******************************************************************************/
+
 #include "oled.h"
 
 uint8_t displayBuffer[4][128] = {0}; // Only use lower half (pages 4-7)
