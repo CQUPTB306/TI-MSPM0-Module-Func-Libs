@@ -1,3 +1,11 @@
+/******************************************************************************
+ - mpu6050.cpp
+ - Designed by WilliTourt
+ - 2025.07.23
+ - More info at:
+ - https://github.com/CQUPTB306/TI-MSPM0-Module-Func-Libs/tree/main/MPU6050
+******************************************************************************/
+
 #include "mpu6050.h"
 
 MPU6050::MPU6050(I2C_Regs* I2C_PORT) : I2C_PORT_(I2C_PORT) {}
