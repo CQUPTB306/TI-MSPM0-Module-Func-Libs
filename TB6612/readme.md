@@ -10,7 +10,7 @@
 
 ### 连接方式
 
-1. 将TB6612的IN1和IN2引脚连接到MSPM0的GPIO，IN1和IN2需位于同一GPIO端口
+1. 将TB6612的IN1和IN2引脚连接到MSPM0的GPIO，**IN1和IN2需位于同一GPIO端口**
 2. 将PWM引脚连接到定时器PWM输出
 3. 确保共地和电源连接正确
 
@@ -79,8 +79,12 @@ int main() {
 }
 ```
 
+### 示例syscfg配置
+<img width="697" height="1022" alt="image" src="https://github.com/user-attachments/assets/a2a83029-6bca-4d28-871b-ebf3bc216503" />
+
 ## 注意事项
 
 1. 需根据你在syscfg文件中设置的PWM_PERIOD_COUNT修改头文件中的`PWM_PERIOD_COUNT`宏，建议的值为1000。
-2. 电机电源和控制电源需共地
-3. 反转时只需设置负值占空比即可
+2. PWM CCR请使用向上计数！！！
+3. 电机电源和控制电源需共地
+4. 反转时只需设置负值占空比即可
