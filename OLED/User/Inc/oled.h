@@ -1,3 +1,11 @@
+/******************************************************************************
+ - oled.h
+ - Designed by WilliTourt
+ - 2025.07.23
+ - More info at:
+ - https://github.com/CQUPTB306/TI-MSPM0-Module-Func-Libs/blob/main/OLED
+******************************************************************************/
+
 #ifndef __OLED_H__
 #define __OLED_H__
 
