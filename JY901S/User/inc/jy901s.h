@@ -15,7 +15,7 @@ class JY901S {
             float yaw;
         };
 
-        JY901S(IRQn_Type JY901S_IRQn);
+        JY901S(IRQn_Type JY901S_IRQn, UART_Regs *UART_INST);
         void begin();
         bool decode();
         float getPitch();
@@ -28,5 +28,6 @@ class JY901S {
 
     private:
         IRQn_Type _JY901S_IRQn;
+        UART_Regs *_JY901S_INST;
         Angles _angles;
 };
