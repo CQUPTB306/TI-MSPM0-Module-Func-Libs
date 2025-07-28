@@ -1,12 +1,12 @@
 #include "jy901s.h"
 
-JY901S::JY901S(IRQn_Type JY901S_IRQn) : _JY901S_IRQn(JY901S_IRQn) {}
+JY901S::JY901S(IRQn_Type JY901S_IRQn, UART_Regs *UART_INST) : _JY901S_IRQn(JY901S_IRQn), _JY901S_INST(UART_INST) {}
 
 void JY901S::begin() {
     NVIC_ClearPendingIRQ(_JY901S_IRQn);
     NVIC_EnableIRQ(_JY901S_IRQn);
     // Ensure UART RX interrupt is enabled
-    DL_UART_Main_enableInterrupt(UART_JY901S_INST, DL_UART_MAIN_INTERRUPT_RX);
+    DL_UART_Main_enableInterrupt(_JY901S_INST, DL_UART_MAIN_INTERRUPT_RX);
 }
 
 bool JY901S::decode() {
