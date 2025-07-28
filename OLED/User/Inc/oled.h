@@ -20,7 +20,7 @@
 
 class OLED {
     public:
-        OLED(uint8_t height = 64, I2C_Regs* I2C_PORT = I2C_0_INST);
+        OLED(uint8_t height = 64, I2C_Regs* I2C_PORT);
         bool begin();
         void clear();
         void clearPart(uint8_t x1, uint8_t page1, uint8_t x2, uint8_t page2);
