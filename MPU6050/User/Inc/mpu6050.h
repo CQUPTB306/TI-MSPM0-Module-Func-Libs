@@ -33,7 +33,7 @@
 #define MPU6050_INT_STATUS   0x3A
 
 #define dt 0.001f
-#define YAW_COMPENSATION_FACTOR 0.036f
+#define YAW_COMPENSATION_FACTOR 0.036f //记得按实际情况更改此补偿系数
 
 typedef struct {
     int16_t AccelX;
@@ -46,7 +46,7 @@ typedef struct {
 
 class MPU6050 {
     public:
-        MPU6050(I2C_Regs* I2C_PORT = I2C_0_INST);
+        MPU6050(I2C_Regs* I2C_PORT);
         void begin(uint8_t samplerate_div, uint8_t gyro_config, uint8_t accel_config, bool useint = false);
 
         void clrInt();
