@@ -1,3 +1,11 @@
+/******************************************************************************
+ - jy901s.cpp
+ - Designed by WilliTourt
+ - 2025.07.28
+ - More info at:
+ - https://github.com/CQUPTB306/TI-MSPM0-Module-Func-Libs/tree/main/MPU6050
+******************************************************************************/
+
 #include "jy901s.h"
 
 JY901S::JY901S(IRQn_Type JY901S_IRQn, UART_Regs *UART_INST) : _JY901S_IRQn(JY901S_IRQn), _JY901S_INST(UART_INST) {}
