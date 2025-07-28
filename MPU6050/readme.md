@@ -27,7 +27,7 @@ uint8_t id;
 MPU6050_Raw raw;
 float yaw;
 
-MPU6050 mpu(I2C_1_INST); // 传入你的I2C外设实例指针，此构造函数默认为I2C0，此例使用I2C1
+MPU6050 mpu(I2C_1_INST); // 传入你的I2C外设实例指针
 
 int main(void) {
     SYSCFG_DL_init();
