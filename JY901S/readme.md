@@ -44,8 +44,8 @@ public:
 
 float yaw = 0.0;  // 存储偏航角
 
-// 创建JY901S实例，传入UART中断号
-JY901S jy(UART_JY901S_INST_INT_IRQN);
+// 创建JY901S实例，传入UART中断号和UART实例
+JY901S jy(UART_JY901S_INST_INT_IRQN, UART1_JY901S_INST);
 
 int main() {
     // 系统初始化
