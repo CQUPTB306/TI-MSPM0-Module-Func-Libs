@@ -24,7 +24,7 @@
 #include "ti_msp_dl_config.h"
 #include "oled.h"
 
-OLED oled(64, I2C_0_INST); // 此构造函数默认为64行OLED屏幕，你也可以传入32，以使用32行屏幕。
+OLED oled(64, I2C_0_INST); // 此构造函数需传入屏幕高度和使用到的硬件I2C实例
 
 int main(void) {
     SYSCFG_DL_init();
