@@ -12,19 +12,25 @@ C++库相较于仓库中C库的优势在于可以方便的控制多个编码器�
 - 可配置参数，适用于不同类型的编码器
 - 使用定时器中断，CPU占用低
 
+## 硬件要求
+
+- TI MSPM0系列微控制器
+- 霍尔效应编码器传感器，已知PPG(每秒脉冲数)
+- 已知减速比的电机
+- 已知周长(直径)的轮子
+
 ## 安装方法
 
 1. 将`inc/encoder.h`和`src/encoder.cpp`文件复制到您的项目
 2. 在您的主程序中包含`encoder.h`
+3. 根据需要配置`encoder.h`中的参数：
+   ```c
+   #define HALL_ENC_PULSE_PER_TURN 26.0f  // 每转脉冲数
+   #define MOTOR_REDUCTION_RATIO 28.0f    // 齿轮减速比
+   #define WHEEL_PERIMETER 21.6f          // 轮子周长(厘米)
+   #define SAMPLE_INTERVAL_SEC 0.02f      // 更新间隔(秒),请根据你设置的定时器周期调整
+   ```
 
-## 硬件连接
-
-编码器需要连接以下信号：
-- A相输出：连接到MSP430的GPIO中断引脚
-- B相输出：连接到MSP430的GPIO输入引脚
-- 电源和地线
-
-建议使用带屏蔽的双绞线连接编码器，以减少干扰。
 
 ## 常见问题
 
@@ -82,6 +88,14 @@ C++库相较于仓库中C库的优势在于可以方便的控制多个编码器�
 ```
 
 ## 使用示例
+
+此图展示如何配置编码器两相的IO模式和中断，注意要在两个IO中都同样配置上升沿/下降沿EXTI
+<img width="625" height="923" alt="屏幕截图 2025-08-03 162735" src="https://github.com/user-attachments/assets/b5ac6c33-0bdd-41f3-92cf-f7f6ae49c0b2" />
+
+
+此图展示如何配置定时器中断，用于速度检测
+<img width="648" height="1233" alt="屏幕截图 2025-08-03 162811" src="https://github.com/user-attachments/assets/1d5d17a3-d8f4-43bf-a419-e45d9229f884" />
+
 
 ```cpp
 #include "ti_msp_dl_config.h"
