@@ -5,13 +5,7 @@
 ## 功能特性
 
 - 完整支持InvenSense MPU6050 DMP功能
-- 实时运动处理，CPU占用低
-- 支持以下功能：
-  - 点击检测(单次和多次点击)
-  - 屏幕方向检测(竖屏/横屏)
-  - 计步器(步数统计)
-  - 低功耗四元数计算
-  - 陀螺仪校准
+- 实时运动处理
 - 简洁易用的API接口
 
 ## 硬件要求
@@ -36,8 +30,12 @@ int main() {
     MPU6050_Init();
     mpu_dmp_init();
 
-	// ... 使用 pitch, roll, yaw 变量 ...
-	// Other codes...
+
+    if (yaw_stablized) {
+	// ... 仅当稳定后才使用 pitch, roll, yaw 变量 ...
+    }
+
+    // Other codes...
 }
 
 void TIMER_General_INST_IRQHandler(void) {
@@ -68,10 +66,11 @@ void TIMER_General_INST_IRQHandler(void) {
 - `float MPU6050_GetTemp(void)` - 读取温度值(摄氏度)
 
 ### DMP函数
+- `void mpu_dmp_init();` - 初始化MPU6050 DMP
 - `int dmp_load_motion_driver_firmware(void)` - 加载DMP固件
 - `int dmp_enable_feature(unsigned short mask)` - 启用DMP功能
 - `int dmp_read_fifo(...)` - 从FIFO读取处理后的传感器数据
 - `int dmp_set_orientation(unsigned short orient)` - 设置屏幕方向
 - `int dmp_get_pedometer_step_count(unsigned long *count)` - 获取步数统计
 
-### 及其他函数，不作介绍
+### 其他函数，不作介绍
