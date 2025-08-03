@@ -57,6 +57,14 @@
 
 ## 使用示例
 
+此图展示如何配置编码器两相的IO模式和中断，注意要在两个IO中都同样配置上升沿/下降沿EXTI
+<img width="625" height="923" alt="屏幕截图 2025-08-03 162735" src="https://github.com/user-attachments/assets/e2ab5369-4923-4576-be17-6b1de0590a3a" />
+
+
+此图展示如何配置定时器中断，用于速度检测
+<img width="648" height="1233" alt="屏幕截图 2025-08-03 162811" src="https://github.com/user-attachments/assets/9c46ff10-b389-4963-92cf-e06042ced5a2" />
+
+
 ```c
 
 /*
